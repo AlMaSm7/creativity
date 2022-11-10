@@ -3,13 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Box from './Box';
+import { Canvas } from '@react-three/fiber'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+     <Canvas>
+     <ambientLight />
+      <pointLight position={[10, 10, 10]} />
+      <Box position={[-1.2, 0.5, -12]} />
+      <Box position={[1.2, 0, 0]} />
+    </Canvas>
   </React.StrictMode>
 );
 
